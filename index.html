@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <script src="/script/javascript.js"></script>
+    <title>Document</title>
+</head>
+
+<body id="body" onload="displayPage()">
+    <div class="column"></div>
+    <div class="column" id="content">
+        <h1>Framingham Risk Score</h1>
+        <div id="page0">
+            <p>What is your age?</p>
+            <form class="form-select">
+                <label for="age" class="select-label-age">Choose an age:</label>
+                <select name="age" id="age" class="select-option-age">
+                    <option value="20-34">20-34</option>
+                    <option value="35-39">35-39</option>
+                    <option value="40-44">40-44</option>
+                    <option value="45-49">45-49</option>
+                    <option value="50-54">50-54</option>
+                    <option value="55-59">55-59</option>
+                    <option value="60-64">60-64</option>
+                    <option value="65-69">65-69</option>
+                    <option value="70-74">70-74</option>
+                    <option value="75-79">75-79</option>
+                </select>
+            </form>
+
+            <p>What is your gender?</p>
+            <form class="form-select">
+                <label for="gender">Choose a gender:</label>
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </form>
+            <br>
+        </div>
+
+
+        <div id="page1">
+            <form class="form-text">
+                <label for="tcholesterol">Total cholesterol, mg/dL:</label><br>
+                <input type="text" id="tcholesterol" name="tcholesterol" onkeypress="return onlyNumberKey(event)"
+                    onblur="validateTCholesterol()"><br>
+            </form>
+                <div class="textErrorContainer">
+                    <div class="textError"></div>
+                </div>
+            <br>
+
+            <form class="form-text">
+                <label for="hcholesterol">HDL cholesterol, mg/dL:</label><br>
+                <input type="text" id="hcholesterol" name="hcholesterol" onkeypress="return onlyNumberKey(event)"
+                    onblur="validateHCholesterol()"><br>
+            </form>
+                <div class="textErrorContainer">
+                    <div class="textError"></div>
+                </div>
+            <br>
+        </div>
+
+
+        <div id="page2">
+            <form class="form-select">
+                <label for="smoker">Are you a smoker?</label>
+                <select name="smoker" id="smoker">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </form>
+            <br>
+        </div>
+
+
+        <div id="page3">
+            <div class="form-container">
+                <form class="form-text">
+                    <label for="blood-pressure">Systolic blood pressure, mm Hg</label><br>
+                    <input type="text" id="blood-pressure" name="blood-pressure"
+                        onkeypress="return onlyNumberKey(event)" onblur="validateBloodPressure()"><br>
+                </form>
+                    <div class="textErrorContainer">
+                        <div class="textError"></div>
+                    </div>
+            </div>
+            <br>
+
+            <form id="bloodPressureForm">
+                <p class="blood-pressure-p">Is your blood pressure being treated with medicine?</p>
+                <div class="form-radio">
+                    <div class="radio-button">
+                        <input type="radio" id="bloodPressure_treated" name="bloodPressure_treatment" value="treated">
+                        <label for="bloodPressure_treated">Yes</label>
+                    </div>
+                    <div class="radio-button">
+                        <input type="radio" id="bloodPressure_untreated" name="bloodPressure_treatment"
+                            value="untreated">
+                        <label for="bloodPressure_untreated">No</label>
+                    </div>
+                </div>
+            </form>
+            <br>
+        </div>
+
+
+        <div id="page4">
+            <p>Your 10 year risk score is:</p>
+            <p id="risk-score"></p>
+        </div>
+
+
+        <div class="buttons" id="buttons">
+            <button onclick="back()" id="back" class="button-nav">Back</button>
+            <button onclick="next()" id="next" class="button-nav">Next</button>
+        </div>
+    </div>
+    <div class="column"></div>
+</body>
+
+</html>

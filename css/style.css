@@ -1,0 +1,141 @@
+/* Make content centered, give it height and background */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  background: rgba(210, 206, 206, 0.8);
+}
+
+/* Divide page into 3 columns */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Apply margin to the middle column's content */
+.column:nth-child(2) {
+  margin: auto 0;
+}
+
+#content {
+  margin: auto;
+  /* Set width and height of content */
+  width: 50%;
+  min-height: 350px;
+  max-height: 350px;
+  min-width: 400px;
+  padding: 10px;
+  /* Set the font of content */
+  font-family: "Roboto";
+  font-size: large;
+  /* Set the position relative for position of buttons */
+  position: relative;
+  /* Round the edges of content border */
+  border-radius: 10px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Set position of back and next buttons */
+.buttons {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+/* Set width of back and next buttons */
+.buttons button {
+  width: 49%;
+}
+
+/* Set the position of form selects to left and right */
+.form-select {
+  display: flex;
+}
+
+.form-select label,
+.form-select select {
+  width: 49%;
+}
+
+/* Set position of radio buttons */
+.form-radio {
+  display: flex;
+  text-align: center;
+}
+
+.radio-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.blood-pressure-p {
+  text-align: center;
+}
+
+/* Set the position of form textboxes to left and right */
+.form-text {
+  display: flex;
+  align-items: center;
+}
+
+.form-text label {
+  flex: 1;
+}
+
+.form-text input {
+  flex: 1;
+}
+
+/* Set final page's text to center */
+#page4 {
+  text-align: center;
+}
+
+/* Set nav buttons' appeareance */
+.button-nav {
+  background-color: #000000;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 5px;
+}
+
+.button-nav:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-nav:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+/* Make 'select's bigger */
+select {
+  height: 25px;
+}
+
+/* Position the error messages to go under textbox */
+.textErrorContainer {
+  display: flex;
+  width: 99%;
+}
+
+.textError {
+  flex: 1;
+}
